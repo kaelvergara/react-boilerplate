@@ -5,8 +5,8 @@ import { BrowserRouter, Switch, Route, Link } from 'react-router-dom'
 
 import Datatable from 'modules/examples/screens/datatable/datatable.component'
 import Form from 'modules/examples/screens/form/form.component'
-
-// import Mobx from 'modules/examples/screens/mobx/mobx.component'
+import LoopingAndConditional from 'modules/examples/screens/looping-and-conditional/looping-and-conditional.component'
+import LifecycleMethods from 'modules/examples/screens/lifecycle-methods/lifecycle-methods.component'
 
 import Local from 'modules/examples/screens/state/local/local.component'
 import AsyncLocal from 'modules/examples/screens/state/asyncLocal/asyncLocal.component'
@@ -25,18 +25,13 @@ const Examples = (props) => {
           <ul className={`${style.topic}`}>
             <span className="font-weight-bold">General</span>
             <li>
-              <Link to="/examples/form" className={style.link}>
+              <Link to="/examples/lifecycle-methods" className={style.link}>
                 Lifecycle Methods
               </Link>
             </li>
             <li>
-              <Link to="/examples/form" className={style.link}>
-                Looping Statements
-              </Link>
-            </li>
-            <li>
-              <Link to="/examples/form" className={style.link}>
-                Conditional Statements
+              <Link to="/examples/looping-and-conditional" className={style.link}>
+                Looping and Conditional Statements
               </Link>
             </li>
             <li>
@@ -110,33 +105,15 @@ const Examples = (props) => {
         </div>
         <div className={`${style.content} bg-light border p-3`}>
           <Switch>
-            <Route
-              exact
-              path={`${props.match.path}/datatable`}
-              component={Datatable}
-            />
+            <Route exact path={`${props.match.path}/lifecycle-methods`} component={LifecycleMethods} />
+            <Route exact path={`${props.match.path}/looping-and-conditional`} component={LoopingAndConditional} />
+            <Route exact path={`${props.match.path}/datatable`} component={Datatable} />
             <Route exact path={`${props.match.path}/form`} component={Form} />
             {/* State */}
-            <Route
-              exact
-              path={`${props.match.path}/state/local`}
-              component={Local}
-            />
-            <Route
-              exact
-              path={`${props.match.path}/state/store`}
-              component={Store}
-            />
-            <Route
-              exact
-              path={`${props.match.path}/state/async-local`}
-              component={AsyncLocal}
-            />
-            <Route
-              exact
-              path={`${props.match.path}/state/async-store`}
-              component={AsyncStore}
-            />
+            <Route exact path={`${props.match.path}/state/local`} component={Local} />
+            <Route exact path={`${props.match.path}/state/store`} component={Store} />
+            <Route exact path={`${props.match.path}/state/async-local`} component={AsyncLocal} />
+            <Route exact path={`${props.match.path}/state/async-store`} component={AsyncStore} />
           </Switch>
         </div>
       </div>
