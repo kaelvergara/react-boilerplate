@@ -1,14 +1,11 @@
 import React from 'react'
 
 import WithSubscription from 'shared/hocs/withSubscription/withSubscription.component'
-import {
-  state as StateState,
-  actions as StateActions,
-} from 'modules/examples/stores/state.store'
+import { state as StoreState, actions as StoreActions } from 'modules/examples/stores/state.store'
 
 const Store = (props) => {
   const handleIncrement = () => {
-    StateActions.increment()
+    StoreActions.increment()
   }
   return (
     <div>
@@ -23,4 +20,4 @@ const Store = (props) => {
 }
 
 // TODO Q: what if i want to subscribe to multiple states
-export default WithSubscription(Store, StateState)
+export default WithSubscription(Store, StoreState)

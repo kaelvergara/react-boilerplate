@@ -1,14 +1,11 @@
 import React from 'react'
 
 import WithSubscription from 'shared/hocs/withSubscription/withSubscription.component'
-import {
-  state as StateState,
-  actions as StateActions,
-} from 'modules/examples/stores/state.store'
+import { state as StoreState, actions as StoreActions } from 'modules/examples/stores/state.store'
 
 const AsyncStore = (props) => {
   const handleGetUser = () => {
-    StateActions.getUser()
+    StoreActions.getUser()
   }
 
   return (
@@ -25,4 +22,4 @@ const AsyncStore = (props) => {
 }
 
 // TODO Q: what if i want to subscribe to multiple states
-export default WithSubscription(AsyncStore, StateState)
+export default WithSubscription(AsyncStore, StoreState)

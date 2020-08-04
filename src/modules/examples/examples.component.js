@@ -39,11 +39,6 @@ const Examples = (props) => {
                 Using props
               </Link>
             </li>
-            <li>
-              <Link to="/examples/form" className={style.link}>
-                Calling parent Function from children
-              </Link>
-            </li>
           </ul>
           <ul className={`${style.topic}`}>
             <span className="font-weight-bold">UI Components</span>
